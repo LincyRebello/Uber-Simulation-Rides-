@@ -1,0 +1,96 @@
+.dsf-driver-signup {
+  background-color: #f8f8f9;
+  min-height: 100vh;
+  padding: 40px 0;
+  font-family: 'Uber Move', Arial, sans-serif;
+}
+ .dsf-driver-signup-container {
+  max-width: 800px;
+}
+ .dsf-driver-signup-form-wrapper {
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 40px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+ .dsf-driver-signup-title {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 30px;
+  color: #000000;
+}
+ .dsf-driver-signup-message {
+  margin-bottom: 20px;
+  padding: 10px;
+  border-radius: 4px;
+  background-color: #f0f0f0;
+  color: #333333;
+}
+ .dsf-driver-signup-photo-section {
+  margin-bottom: 20px;
+}
+ .dsf-driver-signup-photo-preview {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0 auto 20px;
+  background-color: #f0f0f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+ .dsf-driver-signup-photo-preview img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+ .dsf-driver-signup-photo-placeholder {
+  color: #999999;
+  font-size: 14px;
+}
+ .dsf-driver-signup-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+ .dsf-driver-signup-input,
+.dsf-driver-signup-select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  font-size: 16px;
+}
+ .dsf-driver-signup-file-input {
+  width: 100%;
+  margin-top: 10px;
+}
+ .dsf-driver-signup-label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+ .dsf-driver-signup-button {
+  width: 100%;
+  padding: 15px;
+  background-color: #010203;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+ .dsf-driver-signup-button:hover {
+  background-color: #50545a;
+}
+ @media (max-width: 768px) {
+  .dsf-driver-signup-grid {
+    grid-template-columns: 1fr;
+  }
+   .dsf-driver-signup-form-wrapper {
+    padding: 20px;
+  }
+}
