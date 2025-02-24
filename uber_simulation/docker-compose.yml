@@ -1,0 +1,47 @@
+version: '3.8'
+
+services:
+  uber_backend:
+    build:
+      context: .
+    container_name: uber_backend
+    image: uber_backend:latest
+    restart: always
+    command: >
+      sh -c "python manage.py migrate &&
+             python manage.py collectstatic --noinput &&
+             python manage.py runserver 0.0.0.0:8000"
+    volumes:
+      - .:/app
+      - static_data:/app/static
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+    environment:
+      GOOGLE_MAPS_API_KEY: AIzaSyCzP2SPg1M7AFS6wPgCyYPrFUwRDictd4w
+      MYSQL_PASSWORD: leoncorreia
+      MYSQL_USER: root
+      MYSQL_DATABASE: uber_db
+      MYSQL_HOST: localhost
+      KAFKA_BROKER: localhost:9092
+      KAFKA_TOPIC: uber
+      REDIS_HOST: 127.0.0.1
+
+  db:
+    image: mysql:8.0
+    container_name: mysql_db
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: leoncorreia
+      MYSQL_DATABASE: uber_db
+      MYSQL_USER: user
+      MYSQL_PASSWORD: leoncorreia
+    volumes:
+      - mysql_data:/var/lib/mysql
+    ports:
+      - "3306:3306"
+
+volumes:
+  mysql_data:
+  static_data:
